@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-entrega-devops
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      role: entrega-devops
+  template:
+    metadata:
+      labels:
+        role: entrega-devops
+    spec:
+      containers:
+        - name: entrega-devops
+          image: omarvicentinho1/entrega-devops:latest
+
